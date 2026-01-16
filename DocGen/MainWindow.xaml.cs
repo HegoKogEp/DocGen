@@ -1,0 +1,25 @@
+using DocGen.Services;
+using DocGen.ViewModels;
+using Microsoft.UI.Xaml;
+using System;
+
+namespace DocGen
+{
+    public sealed partial class MainWindow : Window, IWindowService
+    {
+        public DocGenViewModel ViewModel;
+        public XamlRoot GetXamlRoot() => Content.XamlRoot;
+        public IntPtr GetWindowHandle() => WinRT.Interop.WindowNative.GetWindowHandle(this);
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            ViewModel = new DocGenViewModel(this);
+
+            var appWindow = this.AppWindow;
+            appWindow.Resize(new Windows.Graphics.SizeInt32(450, 300));
+
+        }
+
+    }
+}

@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DocGen (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "DocGen (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
