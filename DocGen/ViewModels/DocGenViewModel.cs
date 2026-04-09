@@ -4,6 +4,7 @@ using DocGen.Models;
 using DocGen.Services;
 using System;
 using System.Runtime.CompilerServices;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace DocGen.ViewModels
@@ -45,6 +46,26 @@ namespace DocGen.ViewModels
         private bool includeJson;
         [ObservableProperty]
         private bool includeManifest;
+        [ObservableProperty]
+        private bool includeKt;
+        [ObservableProperty]
+        private bool includeGradle;
+        [ObservableProperty]
+        private bool includeKts;
+        [ObservableProperty]
+        private bool includeXml;
+        [ObservableProperty]
+        private bool includeProperties;
+        [ObservableProperty]
+        private bool includeJava;
+        [ObservableProperty]
+        private bool includeJar;
+        [ObservableProperty]
+        private bool includeAar;
+        [ObservableProperty]
+        private bool includePy;
+        [ObservableProperty]
+        private bool includeToml;
         #endregion
 
         // constructor for DocGenViewModel with autoload settings from settings file
@@ -88,6 +109,16 @@ namespace DocGen.ViewModels
         partial void OnIncludeCsprojChanged(bool value) => SaveExtensionSettings();
         partial void OnIncludeJsonChanged(bool value) => SaveExtensionSettings();
         partial void OnIncludeManifestChanged(bool value) => SaveExtensionSettings();
+        partial void OnIncludeKtChanged(bool value) => SaveExtensionSettings();
+        partial void OnIncludeGradleChanged(bool value) => SaveExtensionSettings();
+        partial void OnIncludeKtsChanged(bool value) => SaveExtensionSettings();
+        partial void OnIncludeXmlChanged(bool value) => SaveExtensionSettings();
+        partial void OnIncludePropertiesChanged(bool value) => SaveExtensionSettings();
+        partial void OnIncludeJavaChanged(bool value) => SaveExtensionSettings();
+        partial void OnIncludeJarChanged(bool value) => SaveExtensionSettings();
+        partial void OnIncludeAarChanged (bool value) => SaveExtensionSettings();
+        partial void OnIncludePyChanged (bool value) => SaveExtensionSettings();
+        partial void OnIncludeTomlChanged (bool value) => SaveExtensionSettings();
 
         [RelayCommand]
         public void SwitchLanguage(string languageCode)
@@ -108,6 +139,14 @@ namespace DocGen.ViewModels
             _docGenModel.IncludeCsproj = IncludeCsproj;
             _docGenModel.IncludeJson = IncludeJson;
             _docGenModel.IncludeManifest = IncludeManifest;
+            _docGenModel.IncludeKt = IncludeKt;
+            _docGenModel.IncludeGradle = IncludeGradle;
+            _docGenModel.IncludeXml = IncludeXml;
+            _docGenModel.IncludeProperties = IncludeProperties;
+            _docGenModel.IncludeJava = IncludeJava;
+            _docGenModel.IncludeJar = IncludeJar;
+            _docGenModel.IncludePy = IncludePy;
+            _docGenModel.IncludeToml = IncludeToml;
 
             _docGenModel.GenerateDocumentation(ProjectPath, _windowService.GetXamlRoot());
         }

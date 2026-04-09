@@ -24,11 +24,21 @@
         <MenuBar Grid.Row="0">
             <MenuBarItem Title="{Binding SettingsMenuTitle}">
                 <MenuFlyoutSubItem Text="{Binding ExtensionsMenuItemTitle}">
+                    <ToggleMenuFlyoutItem Text=".py" IsChecked="{x:Bind ViewModel.IncludePy, Mode=TwoWay}" />
                     <ToggleMenuFlyoutItem Text=".xaml" IsChecked="{x:Bind ViewModel.IncludeXaml, Mode=TwoWay}" />
                     <ToggleMenuFlyoutItem Text=".cs" IsChecked="{x:Bind ViewModel.IncludeCs, Mode=TwoWay}" />
                     <ToggleMenuFlyoutItem Text=".csproj" IsChecked="{x:Bind ViewModel.IncludeCsproj, Mode=TwoWay}" />
                     <ToggleMenuFlyoutItem Text=".json" IsChecked="{x:Bind ViewModel.IncludeJson, Mode=TwoWay}" />
                     <ToggleMenuFlyoutItem Text=".manifest" IsChecked="{x:Bind ViewModel.IncludeManifest, Mode=TwoWay}" />
+                    <ToggleMenuFlyoutItem Text=".kt" IsChecked="{x:Bind ViewModel.IncludeKt, Mode=TwoWay}" />
+                    <ToggleMenuFlyoutItem Text=".gradle" IsChecked="{x:Bind ViewModel.IncludeGradle, Mode=TwoWay}" />
+                    <ToggleMenuFlyoutItem Text=".kts" IsChecked="{x:Bind ViewModel.IncludeKts, Mode=TwoWay}" />
+                    <ToggleMenuFlyoutItem Text=".xml" IsChecked="{x:Bind ViewModel.IncludeXml, Mode=TwoWay}" />
+                    <ToggleMenuFlyoutItem Text=".properties" IsChecked="{x:Bind ViewModel.IncludeProperties, Mode=TwoWay}" />
+                    <ToggleMenuFlyoutItem Text=".java" IsChecked="{x:Bind ViewModel.IncludeJava, Mode=TwoWay}" />
+                    <ToggleMenuFlyoutItem Text=".jar" IsChecked="{x:Bind ViewModel.IncludeJar, Mode=TwoWay}" />
+                    <ToggleMenuFlyoutItem Text=".aar" IsChecked="{x:Bind ViewModel.IncludeAar, Mode=TwoWay}" />
+                    <ToggleMenuFlyoutItem Text=".toml" IsChecked="{x:Bind ViewModel.IncludeToml, Mode=TwoWay}" />
                 </MenuFlyoutSubItem>
                 <MenuFlyoutSubItem Text="{Binding LanguageMenuItemTitle}">
                     <MenuFlyoutSubItem.Items>

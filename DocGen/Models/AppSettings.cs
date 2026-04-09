@@ -16,5 +16,15 @@ namespace DocGen.Models
         public bool IncludeCsproj { get; set; } = true;
         public bool IncludeJson { get; set; } = false;
         public bool IncludeManifest { get; set; } = false;
+        public bool IncludeKt { get; set; } = false;
+        public bool IncludeGradle { get; set; } = false;
+        public bool IncludeKts { get; set; } = false;
+        public bool IncludeXml { get; set; } = false;
+        public bool IncludeProperties { get; set; } = false;
+        public bool IncludeJava { get; set; } = false;
+        public bool IncludeJar { get; set; } = false;
+        public bool IncludeAar { get; set; } = false;
+        public bool IncludePy { get; set; } = false;
+        public bool IncludeToml { get; set; } = false;
     }
 }

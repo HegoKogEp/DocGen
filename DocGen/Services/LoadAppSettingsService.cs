@@ -37,6 +37,15 @@ namespace DocGen.Services
                     if (settings.IncludeCsproj) settings.SelectedExtensions.Add(".csproj");
                     if (settings.IncludeJson) settings.SelectedExtensions.Add(".json");
                     if (settings.IncludeManifest) settings.SelectedExtensions.Add(".manifest");
+                    if (settings.IncludeKt) settings.SelectedExtensions.Add(".kt");
+                    if (settings.IncludeGradle) settings.SelectedExtensions.Add(".gradle");
+                    if (settings.IncludeKts) settings.SelectedExtensions.Add(".kts");
+                    if (settings.IncludeXml) settings.SelectedExtensions.Add(".xml");
+                    if (settings.IncludeProperties) settings.SelectedExtensions.Add(".properties");
+                    if (settings.IncludeJava) settings.SelectedExtensions.Add(".java");
+                    if (settings.IncludeJar) settings.SelectedExtensions.Add(".jar");
+                    if (settings.IncludeAar) settings.SelectedExtensions.Add(".aar");
+                    if (settings.IncludePy) settings.SelectedExtensions.Add(".py");
                 }
 
                 return settings;
