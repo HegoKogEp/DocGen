@@ -31,7 +31,7 @@ namespace DocGen.Models
         public bool IncludePy { get; set; } = false;
         public bool IncludeToml { get; set; } = false;
 
-        public async void GenerateDocumentation(string projectPath, XamlRoot xamlRoot)
+        public async void GenerateDocumentation(string projectPath, string docTitle, XamlRoot xamlRoot)
         {
             if (string.IsNullOrEmpty(projectPath) || !Directory.Exists(projectPath))
             {
@@ -88,7 +88,7 @@ namespace DocGen.Models
                 var documentationContent = new StringBuilder();
 
                 // Add document header
-                documentationContent.AppendLine($"# {Path.GetFileName(projectPath)} - Project Documentation");
+                documentationContent.AppendLine($"# {(docTitle != null ? docTitle : Path.GetFileName(projectPath))} - Project Documentation");
                 documentationContent.AppendLine();
                 documentationContent.AppendLine("## Content");
                 documentationContent.AppendLine();

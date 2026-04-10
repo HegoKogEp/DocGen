@@ -52,7 +52,7 @@
         <TextBox Grid.Row="1"
                  Height="60"
                  Margin="8"
-                 Text="{Binding ProjectPath}"
+                 Text="{Binding ProjectPath, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                  Header="{Binding ProjectPathHeader}"/>
 
         <Button HorizontalAlignment="Right"
@@ -64,7 +64,7 @@
         <TextBox Grid.Row="2"
                  Height="60"
                  Margin="8"
-                 Text="{Binding DocTitle}"
+                 Text="{Binding DocTitle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                  Header="{Binding DocTitleHeader}"/>
 
         <Button x:Name="GenerateButton"

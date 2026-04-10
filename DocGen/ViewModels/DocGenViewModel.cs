@@ -85,6 +85,16 @@ namespace DocGen.ViewModels
             IncludeCsproj = settings.IncludeCsproj;
             IncludeJson = settings.IncludeJson;
             IncludeManifest = settings.IncludeManifest;
+            IncludeKt = settings.IncludeKt;
+            IncludeToml = settings.IncludeToml;
+            IncludePy = settings.IncludePy;
+            IncludeGradle = settings.IncludeGradle;
+            IncludeKts = settings.IncludeKts;
+            IncludeJava = settings.IncludeJava;
+            IncludeJar = settings.IncludeJar;
+            IncludeProperties = settings.IncludeProperties;
+            IncludeXml = settings.IncludeXml;
+            IncludeAar = settings.IncludeAar;
 
             // apply language settings
             _languageService.ChangeLanguage(settings.Language);
@@ -100,6 +110,16 @@ namespace DocGen.ViewModels
             settings.IncludeCsproj = IncludeCsproj;
             settings.IncludeJson = IncludeJson;
             settings.IncludeManifest = IncludeManifest;
+            settings.IncludeKt = IncludeKt;
+            settings.IncludeToml = IncludeToml;
+            settings.IncludePy = IncludePy;
+            settings.IncludeGradle = IncludeGradle;
+            settings.IncludeKts = IncludeKts;
+            settings.IncludeJava = IncludeJava;
+            settings.IncludeJar = IncludeJar;
+            settings.IncludeProperties = IncludeProperties;
+            settings.IncludeXml = IncludeXml;
+            settings.IncludeAar = IncludeAar;
             _settingsService.SaveSettings(settings);
         }
 
@@ -148,7 +168,7 @@ namespace DocGen.ViewModels
             _docGenModel.IncludePy = IncludePy;
             _docGenModel.IncludeToml = IncludeToml;
 
-            _docGenModel.GenerateDocumentation(ProjectPath, _windowService.GetXamlRoot());
+            _docGenModel.GenerateDocumentation(ProjectPath, DocTitle, _windowService.GetXamlRoot());
         }
 
         [RelayCommand]

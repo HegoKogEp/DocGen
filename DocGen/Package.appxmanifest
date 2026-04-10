@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 
 <Package
   xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
@@ -9,8 +9,8 @@
 
   <Identity
     Name="c4d8e63f-a5e4-467e-8a3a-4c96e342d436"
-    Publisher="CN=Виталий"
-    Version="1.0.0.0" />
+    Publisher="CN=Ikigroove_"
+    Version="1.0.1.0" />
 
   <mp:PhoneIdentity PhoneProductId="c4d8e63f-a5e4-467e-8a3a-4c96e342d436" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
