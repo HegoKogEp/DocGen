@@ -1,0 +1,12 @@
+﻿{
+  "Error": "Ошибка",
+  "PathErrorMesseage": "Папка проекта не существует или не указана.",
+  "Success": "Успех",
+  "SuccessMesseage": "Документация успешно создана",
+  "ProjectPathTBX": "Путь к проекту",
+  "DocTitileHeaderBTN": "Заголовок документации",
+  "GenerateDocumentationBTN": "Создать документацию",
+  "SettingsMenu": "Настройки",
+  "ExtentionSettings": "Расширения файлов",
+  "LanguagesSettings": "Язык"
+}

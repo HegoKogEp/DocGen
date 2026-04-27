@@ -13,8 +13,8 @@ namespace DocGen.ViewModels
     {
         private readonly LanguageService _languageService;
         private readonly IWindowService _windowService;
-        private readonly DocGenModel _docGenModel = new();
         private readonly LoadAppSettingsService _settingsService;
+        private DocGenModel? _docGenModel;
 
         #region Propertiees for interface fields
         [ObservableProperty]
@@ -72,14 +72,28 @@ namespace DocGen.ViewModels
         #region Constructor
         public DocGenViewModel(IWindowService windowService)
         {
-            _languageService = new LanguageService(this);
             _windowService = windowService;
             _settingsService = new LoadAppSettingsService();
 
-            // load settings
+            // 1. Загружаем настройки
             var settings = _settingsService.LoadAppSettings();
 
-            // apply extension settings
+            // 2. Инициализируем ResourceService (устанавливаем язык)
+            string langToUse = settings.Language;
+            if (string.IsNullOrEmpty(langToUse))
+            {
+                langToUse = Windows.System.UserProfile.GlobalizationPreferences.Languages[0];
+                // нормализуем
+                if (langToUse.StartsWith("ru")) langToUse = "ru-RU";
+                else if (langToUse.StartsWith("en")) langToUse = "en-US";
+                else langToUse = "en-US";
+            }
+            ResourceService.Initialize(langToUse);
+
+            // 3. Теперь создаём LanguageService (он использует ResourceService)
+            _languageService = new LanguageService(this);
+
+            // 4. Применяем настройки расширений
             IncludeXaml = settings.IncludeXaml;
             IncludeCs = settings.IncludeCs;
             IncludeCsproj = settings.IncludeCsproj;
@@ -96,8 +110,8 @@ namespace DocGen.ViewModels
             IncludeXml = settings.IncludeXml;
             IncludeAar = settings.IncludeAar;
 
-            // apply language settings
-            _languageService.ChangeLanguage(settings.Language);
+            // 5. Обновляем UI (чтобы заголовки отобразились)
+            _languageService.ChangeLanguage(langToUse); // вызовет UpdateLocalizedStrings
         }
         #endregion
 
@@ -153,6 +167,8 @@ namespace DocGen.ViewModels
         [RelayCommand]
         private async Task GenerateDocumentation()
         {
+            _docGenModel ??= new DocGenModel();
+
             // passing extendions to DocGenModel
             _docGenModel.IncludeXaml = IncludeXaml;
             _docGenModel.IncludeCs = IncludeCs;

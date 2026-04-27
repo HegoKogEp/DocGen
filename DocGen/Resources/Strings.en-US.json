@@ -1,0 +1,12 @@
+{
+  "Error": "Error",
+  "PathErrorMesseage": "Project folder does not exist or is not specified.",
+  "Success": "Success",
+  "SuccessMesseage": "Documentation successfully generated",
+  "ProjectPathTBX": "Project path",
+  "DocTitileHeaderBTN": "Documentation title",
+  "GenerateDocumentationBTN": "Generate documentation",
+  "SettingsMenu": "Settings",
+  "ExtentionSettings": "File extensions",
+  "LanguagesSettings": "Language"
+}

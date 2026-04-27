@@ -12,7 +12,6 @@ namespace DocGen.Models
 {
     public class DocGenModel
     {
-        private readonly ResourceService _resourceService = new();
 
         private readonly HashSet<string> _excludedFolders = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         #region ExcludedFolders
@@ -139,8 +138,8 @@ namespace DocGen.Models
             {
                 var dialog = new ContentDialog
                 {
-                    Title = _resourceService.GetLocalizedResource("Error"),
-                    Content = _resourceService.GetLocalizedResource("PathErrorMesseage"),
+                    Title = ResourceService.GetLocalizedResource("Error"),
+                    Content = ResourceService.GetLocalizedResource("PathErrorMesseage"),
                     CloseButtonText = "OK",
                     XamlRoot = xamlRoot
                 };
@@ -298,8 +297,8 @@ namespace DocGen.Models
 
                 var dialog = new ContentDialog
                 {
-                    Title = _resourceService.GetLocalizedResource("Success"),
-                    Content = $"{_resourceService.GetLocalizedResource("SuccessMesseage")}:\n {outputFilePath}",
+                    Title = ResourceService.GetLocalizedResource("Success"),
+                    Content = $"{ResourceService.GetLocalizedResource("SuccessMesseage")}:\n {outputFilePath}",
                     CloseButtonText = "OK",
                     XamlRoot = xamlRoot
                 };
@@ -309,8 +308,8 @@ namespace DocGen.Models
             {
                 var dialog = new ContentDialog
                 {
-                    Title = _resourceService.GetLocalizedResource("Error"),
-                    Content = $"{_resourceService.GetLocalizedResource("Error")}: {ex.Message}",
+                    Title = ResourceService.GetLocalizedResource("Error"),
+                    Content = $"{ResourceService.GetLocalizedResource("Error")}: {ex.Message}",
                     CloseButtonText = "OK",
                     XamlRoot = xamlRoot
                 };
